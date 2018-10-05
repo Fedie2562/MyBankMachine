@@ -68,21 +68,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Deposit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="depositButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withdrawButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Withdraw"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="withdrawButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="displayButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Balance"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="interestButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Interest"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="interestButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

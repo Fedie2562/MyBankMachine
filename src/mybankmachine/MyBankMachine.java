@@ -6,10 +6,14 @@
 
 package mybankmachine;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author fedie2562
  */
 public class MyBankMachine extends javax.swing.JFrame {
+        ATM bankInfo = new ATM(JOptionPane.showInputDialog("Please enter the name of your bank"),
+            Double.parseDouble(JOptionPane.showInputDialog("Enter the amount of money on that account")));
 
     /**
      * Creates new form MyBankMachine
@@ -40,12 +44,32 @@ public class MyBankMachine extends javax.swing.JFrame {
         title.setText("My Bank Machine Emulated ATM");
 
         depositButton.setText("Deposit");
+        depositButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                depositButtonActionPerformed(evt);
+            }
+        });
 
         withdrawButton.setText("Withdraw");
+        withdrawButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                withdrawButtonActionPerformed(evt);
+            }
+        });
 
         displayButton.setText("Balance");
+        displayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayButtonActionPerformed(evt);
+            }
+        });
 
         interestButton.setText("Interest");
+        interestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                interestButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,6 +103,26 @@ public class MyBankMachine extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void depositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depositButtonActionPerformed
+        // Deposit a specified amount into the account
+        bankInfo.deposit(Double.parseDouble(JOptionPane.showInputDialog("How much would you like to deposit ?")));
+    }//GEN-LAST:event_depositButtonActionPerformed
+
+    private void displayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayButtonActionPerformed
+        // Displays current balance
+        System.out.println("\n"+bankInfo.toString());
+    }//GEN-LAST:event_displayButtonActionPerformed
+
+    private void withdrawButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawButtonActionPerformed
+        // Withdraw a specified amount of money
+        bankInfo.withdraw(Double.parseDouble(JOptionPane.showInputDialog("How much would you like to withdraw ?")));
+    }//GEN-LAST:event_withdrawButtonActionPerformed
+
+    private void interestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interestButtonActionPerformed
+        // Daily interest
+        
+    }//GEN-LAST:event_interestButtonActionPerformed
 
     /**
      * @param args the command line arguments
