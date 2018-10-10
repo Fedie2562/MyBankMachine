@@ -121,7 +121,8 @@ public class MyBankMachine extends javax.swing.JFrame {
 
     private void interestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interestButtonActionPerformed
         // Daily interest
-        
+        bankInfo.interest(Double.parseDouble(JOptionPane.showInputDialog("Please enter the annual interest rate in percentage\n ex: 2% = '2'")),
+                          Integer.parseInt(JOptionPane.showInputDialog("Please enter how many days that the money is being invested")));
     }//GEN-LAST:event_interestButtonActionPerformed
 
     /**
